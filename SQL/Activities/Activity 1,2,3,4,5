@@ -1,0 +1,99 @@
+-------REM   Script: Activity 1,2,3,4,5
+
+--- Activity1 
+*********************
+
+DROP TABLE salesman;
+
+CREATE TABLE salesman 
+    (salesman_id int PRIMARY KEY, 
+    salesman_name varchar2(20), 
+    salesman_city varchar2(20), 
+    commission int);
+
+DESCRIBE salesman
+
+SELECT * from Salesman;
+
+INSERT INTO salesman VALUES(6001, 'Sravani', 'AP', 13);
+
+CREATE TABLE Salesman 
+    (salesman_id int PRIMARY KEY, 
+    salesman_name varchar2(20), 
+    salesman_city varchar2(20), 
+    commission int);
+
+DESCRIBE salesman
+
+
+SELECT * from Salesman;
+
+--Acivity 2
+***************************
+
+-- Insert one row
+INSERT INTO Salesman VALUES(6001, 'Sravani', 'AP', 13);
+
+-- Insert multiple rows at once
+INSERT ALL 
+    INTO salesman VALUES(6002, 'RAMA', 'Kanataka', 11) 
+    INTO salesman VALUES(6003, 'RAMU', 'Tamil Nadu', 14) 
+    INTO salesman VALUES(6004, 'RAVI', 'Mumbai', 13) 
+    INTO salesman VALUES(6005, 'RAMANA', 'AP', 12) 
+SELECT 1 FROM DUAL;
+
+SELECT * from Salesman;
+
+--Activity 3
+************************************
+
+-- Show data from the salesman_id and city columns
+
+SELECT salesman_id, salesman_city FROM salesman;
+
+-- Show data of salesman from Kanataka
+
+SELECT * FROM salesman WHERE salesman_city='Kanataka';
+
+-- Show salesman_id and commission of RAMA
+
+SELECT salesman_id, commission FROM salesman WHERE salesman_name='RAMA';
+
+--Activity 4
+******************************
+
+-- Add the grade column
+
+ALTER TABLE salesman ADD grade int;
+
+-- Update the values in the grade column
+
+UPDATE salesman SET grade=100;
+
+SELECT * from Salesman;
+
+--Activity 5
+************************
+
+-- Update the grade score of salesmen from Sravani to 200
+
+UPDATE salesman SET grade=200 WHERE salesman_city='Sravani';
+
+-- Update the grade score of RAMA to 300.
+
+UPDATE salesman SET grade=300 WHERE salesman_name='RAMA';
+
+-- Update the name RAVI to Ravindra.
+
+UPDATE salesman SET salesman_name='Ravindra' WHERE salesman_name='RAVI';
+
+-- Update the grade score of salesmen from RAMU to 200
+
+UPDATE salesman SET grade=200 WHERE salesman_city='RAMU';
+
+-- Update the grade score of salesmen from Kanataka to 200 
+
+UPDATE salesman SET grade=200 WHERE salesman_city='Kanataka';
+
+SELECT * FROM salesman;
+
