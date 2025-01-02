@@ -1,0 +1,27 @@
+---Activity7
+******************
+
+Select SUM(purchase_amount) as TOTAL from orders;
+
+Select avg(purchase_amount) AS Average from orders;
+
+Select MAX(purchase_amount) from orders;
+
+Select MIN(purchase_amount) from orders;
+
+select count(distinct salesman_id) as total_count from orders;
+
+
+--Activity8
+*********************
+
+select customer_id ,max(purchase_amount)as MAX_Amount from orders
+group by customer_id;
+
+select salesman_id ,max(purchase_amount)as MAX_Amount from orders
+where order_date=TO_DATE('2012/08/17','YYYY/MM/DD')
+group by salesman_id;
+
+SELECT customer_id, order_date, MAX(purchase_amount) AS  Amount FROM orders
+GROUP BY customer_id, order_date
+HAVING MAX(purchase_amount) IN(2030, 3450, 5760, 6000);
