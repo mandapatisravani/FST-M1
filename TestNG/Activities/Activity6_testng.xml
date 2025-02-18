@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="FSTTests">
+    <parameter name="username" value="admin" />
+    <parameter name="password" value="password" />
+    <test name="FSTActivities">
+        <classes>
+            <class name="Activity6" />
+        </classes>
+    </test>
+</suite>
